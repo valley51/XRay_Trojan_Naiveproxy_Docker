@@ -1,16 +1,16 @@
 #!/bin/bash
 
 checkDocker=$(which docker)
-checkDockerCompose=$(which docker-compose)
+checkDockerCompose=$(which docker compose)
 if [ "$checkDocker" == "" ] && [ "$checkDockerCompose" == "" ]; then
-	echo "Please install docker and docker-compose!"
+	echo "Please install docker and docker compose!"
 	exit
 elif [ "$checkDocker" == "" ]; then
 	echo "Please install docker!"
 	exit
 fi
 if [ "$checkDockerCompose" == "" ]; then
-	echo "Please install docker-compose!"
+	echo "Please install docker compose!"
 	exit
 fi
 
@@ -72,7 +72,7 @@ echo "Port: 443"
 echo "Username: superuser"
 echo "Password:" $trojan_password
 echo "-----------------------------------------------"
-echo "Please run 'docker-compose up -d' to build!"
+echo "Please run 'docker compose up -d' to build!"
 echo "Enjoy it!"
 
 cat <<-EOF >./info.txt
